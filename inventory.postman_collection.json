@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "1486d6cb-57fc-4084-aed1-d6bebe29bc0f",
+		"name": "inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6752181",
+		"_collection_link": "https://winter-sunset-59618.postman.co/workspace/OSS~e4241744-5749-4636-843f-4bef43e8149c/collection/6752181-1486d6cb-57fc-4084-aed1-d6bebe29bc0f?action=share&source=collection_link&creator=6752181"
+	},
+	"item": [
+		{
+			"name": "inventory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/determine?streetName=teste&streetNumber=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"determine"
+					],
+					"query": [
+						{
+							"key": "streetName",
+							"value": "teste"
+						},
+						{
+							"key": "streetNumber",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "external inventory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": {\r\n        \"streetName\": \"204854\",\r\n        \"streetNumber\": \"1359999\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/determine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"determine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "internal inventory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": {\r\n        \"streetName\": \"Rua X\",\r\n        \"streetNumber\": \"135\"\r\n    },\r\n    \"cabinet\": {\r\n        \"terminalBox\": {\r\n            \"id\": \"02SP87SS2\",\r\n            \"type\": \"Splitter\"\r\n        },\r\n        \"cable\": \"02\",\r\n        \"fiber\": \"87\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/determine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"determine"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
